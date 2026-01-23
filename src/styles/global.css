@@ -922,6 +922,11 @@ a:hover {
   color: var(--color-accent-primary);
 }
 
+/* Normal ampersand font */
+.amp {
+  font-family: var(--font-primary);
+}
+
 .glass-effect {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
