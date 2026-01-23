@@ -228,7 +228,7 @@ a:hover {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: var(--spacing-xxl) 0;
+  padding: calc(var(--spacing-xxl) + 70px) 0 var(--spacing-xxl);
   position: relative;
 }
 
@@ -912,6 +912,11 @@ a:hover {
   background-clip: text;
 }
 
+/* Icon accent color - safe for icon fonts */
+.icon-accent {
+  color: var(--color-accent-primary);
+}
+
 .glass-effect {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
@@ -957,6 +962,16 @@ a:hover {
   :root {
     --spacing-xxl: 3rem;
     --spacing-xl: 2.5rem;
+  }
+
+  /* Add more horizontal padding on mobile */
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .profile-image {
+    max-width: 200px;
   }
 
   .btn-primary-custom,
