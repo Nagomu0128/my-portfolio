@@ -94,18 +94,6 @@ import '../styles/global.css';
       });
     });
 
-    // Parallax Effect for Hero
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-      window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        if (scrolled < window.innerHeight) {
-          (heroSection as HTMLElement).style.transform = `translateY(${scrolled * 0.3}px)`;
-          (heroSection as HTMLElement).style.opacity = String(1 - (scrolled / window.innerHeight) * 0.5);
-        }
-      });
-    }
-
     // Console Message
     console.log('%c Welcome to Kazuya Yoshida\'s Portfolio! ',
       'background: linear-gradient(135deg, #c9a227, #f4d03f); color: #0a0a0f; font-size: 14px; font-weight: bold; padding: 10px; border-radius: 5px;');
