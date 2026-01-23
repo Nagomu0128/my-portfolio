@@ -324,6 +324,11 @@ a:hover {
   box-shadow: 0 0 40px rgba(201, 162, 39, 0.4);
 }
 
+/* About page profile image */
+.about-profile-image {
+  max-width: 400px;
+}
+
 @keyframes pulseGlow {
   0%, 100% { opacity: 0.2; transform: scale(1); }
   50% { opacity: 0.35; transform: scale(1.05); }
@@ -971,6 +976,10 @@ a:hover {
   }
 
   .profile-image {
+    max-width: 200px;
+  }
+
+  .about-profile-image {
     max-width: 200px;
   }
 
