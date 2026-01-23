@@ -1,0 +1,74 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  category?: string;
+  demoUrl?: string;
+  githubUrl?: string;
+  date?: string;
+  index?: number;
+}
+
+const {
+  title,
+  description,
+  image,
+  technologies,
+  category = 'Project',
+  demoUrl,
+  githubUrl,
+  date,
+  index = 0
+} = Astro.props;
+
+const delayClass = `animate-delay-${(index % 5) + 1}`;
+const placeholderImage = `https://via.placeholder.com/400x250/1a1a25/c9a227?text=${encodeURIComponent(title)}`;
+---
+
+<div
+  class={`col-md-6 col-lg-4 animate-on-scroll ${delayClass} product-item`}
+  data-category={category.toLowerCase()}
+>
+  <div class="card-custom h-100">
+    <div class="card-image-wrapper">
+      <img
+        src={image}
+        alt={title}
+        class="card-image"
+        onerror={`this.src='${placeholderImage}'`}
+        loading="lazy"
+      />
+      <div class="card-overlay">
+        <div class="d-flex gap-2">
+          {demoUrl && (
+            <a href={demoUrl} target="_blank" rel="noopener" class="btn btn-primary-custom btn-sm">
+              Demo
+            </a>
+          )}
+          {githubUrl && (
+            <a href={githubUrl} target="_blank" rel="noopener" class="btn btn-outline-custom btn-sm">
+              GitHub
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+    <div class="card-body-custom">
+      <p class="card-tag">{category}</p>
+      <h4 class="card-title-custom">{title}</h4>
+      <p class="card-text-custom">{description}</p>
+      <div class="tech-tags">
+        {technologies.map((tech) => (
+          <span class="tech-tag">{tech}</span>
+        ))}
+      </div>
+      {date && (
+        <div class="card-meta">
+          <span><i class="bi bi-calendar3 me-1"></i>{date}</span>
+        </div>
+      )}
+    </div>
+  </div>
+</div>

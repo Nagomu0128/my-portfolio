@@ -1,0 +1,45 @@
+---
+interface Props {
+  activePage?: 'overview' | 'about' | 'products' | 'blog';
+}
+
+const { activePage = 'overview' } = Astro.props;
+
+const navItems = [
+  { href: '/', label: 'Overview', key: 'overview' },
+  { href: '/about', label: 'About', key: 'about' },
+  { href: '/products', label: 'Products', key: 'products' },
+  { href: '/blog', label: 'Blog', key: 'blog' },
+];
+---
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+  <div class="container">
+    <a class="navbar-brand navbar-brand-custom" href="/">KY</a>
+    <button
+      class="navbar-toggler navbar-toggler-custom"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {navItems.map((item) => (
+          <li class="nav-item">
+            <a
+              class={`nav-link nav-link-custom ${activePage === item.key ? 'active' : ''}`}
+              href={item.href}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+---
+
+<BaseLayout title="About | Kazuya Yoshida" description="About Kazuya Yoshida - Software Engineer & Developer" activePage="about">
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-eyebrow">About Me</p>
+      <h1 class="section-title">Who I Am</h1>
+    </div>
+  </section>
+
+  <!-- Profile Section -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 animate-on-scroll">
+          <div class="profile-image-wrapper">
+            <!-- ##TODO: プロフィール画像を public/images/profile.jpg に配置してください -->
+            <img
+              src="/images/profile.jpg"
+              alt="Kazuya Yoshida"
+              class="profile-image w-100"
+              style="max-width: 350px;"
+              onerror="this.src='https://via.placeholder.com/350x350/1a1a25/c9a227?text=KY'"
+            />
+          </div>
+        </div>
+        <div class="col-lg-7 animate-on-scroll animate-delay-1">
+          <h2 class="mb-4">吉田 和哉 <span class="text-gradient">Yoshida Kazuya</span></h2>
+          <div class="mb-4">
+            <p class="mb-3" style="color: var(--color-text-secondary); font-size: 1.1rem;">
+              大阪大学工学部 電子情報工学科 B2の学生です。
+              電子回路とコンピュータサイエンスについて日々勉強しています。
+            </p>
+            <p class="mb-3" style="color: var(--color-text-secondary);">
+              開発経験はまだ浅いですが、開発が大好きで、テック系の記事を読むのが日課です。
+              新しい技術に触れることが好きで、フロントエンドからインフラまで幅広く挑戦しています。
+            </p>
+            <p style="color: var(--color-text-secondary);">
+              趣味は一人旅で、B2の春に九州一周一人旅をしました。
+              お酒も好きで、特に日本酒が大好きです。
+            </p>
+          </div>
+
+          <!-- Quick Info -->
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-geo-alt text-gradient fs-4"></i>
+                <div>
+                  <small style="color: var(--color-text-muted);">Location</small>
+                  <p class="mb-0">Osaka, Japan</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-mortarboard text-gradient fs-4"></i>
+                <div>
+                  <small style="color: var(--color-text-muted);">University</small>
+                  <p class="mb-0">Osaka University</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-calendar3 text-gradient fs-4"></i>
+                <div>
+                  <small style="color: var(--color-text-muted);">Birthday</small>
+                  <p class="mb-0">2006/01/28</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-envelope text-gradient fs-4"></i>
+                <div>
+                  <small style="color: var(--color-text-muted);">Email</small>
+                  <p class="mb-0">kyoshidk@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="mailto:kyoshidk@gmail.com" class="btn btn-primary-custom">
+            <i class="bi bi-envelope me-2"></i>Contact Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider container" />
+
+  <!-- Timeline Section -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader eyebrow="History" title="My Journey" />
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="timeline">
+            <!-- ##TODO: 経歴を追加・編集してください -->
+            <div class="timeline-item animate-on-scroll">
+              <p class="timeline-date">2024年4月</p>
+              <h4 class="timeline-title">大阪大学 工学部 入学</h4>
+              <p class="timeline-description">
+                大阪大学工学部電子情報工学科に入学。
+                電子回路とコンピュータサイエンスの基礎を学び始めました。
+              </p>
+            </div>
+
+            <div class="timeline-item animate-on-scroll animate-delay-1">
+              <p class="timeline-date">2025年5月</p>
+              <h4 class="timeline-title">Google Developer Groups on Campus Osaka 参加</h4>
+              <p class="timeline-description">
+                GDG on Campus Osakaに参加し、コミュニティでの活動を開始。
+                様々なイベントやハンズオンに参加しています。
+              </p>
+            </div>
+
+            <div class="timeline-item animate-on-scroll animate-delay-2">
+              <p class="timeline-date">2025年10月</p>
+              <h4 class="timeline-title">Kiei 参加</h4>
+              <p class="timeline-description">
+                Kieiに参加し、実践的な開発経験を積んでいます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider container" />
+
+  <!-- Skills Section -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Skills"
+        title="Technologies"
+      />
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <!-- Languages & Frameworks -->
+          <div class="mb-5 animate-on-scroll">
+            <h5 class="skill-category-title text-center mb-4">
+              Languages & Frameworks
+            </h5>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <div class="skill-item">
+                <i class="devicon-typescript-plain colored"></i>
+                <span>TypeScript</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-react-original colored"></i>
+                <span>React</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-nextjs-plain"></i>
+                <span>Next.js</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-go-plain colored"></i>
+                <span>Go</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-python-plain colored"></i>
+                <span>Python</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-postgresql-plain colored"></i>
+                <span>PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Infrastructure -->
+          <div class="animate-on-scroll animate-delay-1">
+            <h5 class="skill-category-title text-center mb-4">
+              Infrastructure
+            </h5>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <div class="skill-item">
+                <i class="devicon-docker-plain colored"></i>
+                <span>Docker</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-kubernetes-plain colored"></i>
+                <span>Kubernetes</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-terraform-plain colored"></i>
+                <span>Terraform</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-googlecloud-plain colored"></i>
+                <span>GCP</span>
+              </div>
+              <div class="skill-item">
+                <i class="devicon-azure-plain colored"></i>
+                <span>Azure</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider container" />
+
+  <!-- Interests Section -->
+  <section class="section">
+    <div class="container">
+      <SectionHeader eyebrow="Interests" title="Beyond Coding" />
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card-custom text-center">
+            <div class="card-body-custom py-5">
+              <i class="bi bi-airplane fs-1 text-gradient mb-3"></i>
+              <h4 class="card-title-custom">Solo Travel</h4>
+              <p class="card-text-custom">
+                一人旅が好き。B2の春に九州一周の旅をしました。
+                新しい場所を探索するのが楽しい。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 animate-on-scroll animate-delay-1">
+          <div class="card-custom text-center">
+            <div class="card-body-custom py-5">
+              <i class="bi bi-cup fs-1 text-gradient mb-3"></i>
+              <h4 class="card-title-custom">Japanese Sake</h4>
+              <p class="card-text-custom">
+                お酒が大好き、特に日本酒。
+                各地の地酒を味わうのが趣味です。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 animate-on-scroll animate-delay-2">
+          <div class="card-custom text-center">
+            <div class="card-body-custom py-5">
+              <i class="bi bi-journal-text fs-1 text-gradient mb-3"></i>
+              <h4 class="card-title-custom">Tech Articles</h4>
+              <p class="card-text-custom">
+                テック系の記事を読むのが日課。
+                最新技術のトレンドを常にキャッチアップ。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogCard from '../components/BlogCard.astro';
+import { blogs, getCategories } from '../data/blogs';
+
+const categories = getCategories();
+---
+
+<BaseLayout title="Blog | Kazuya Yoshida" description="Blog by Kazuya Yoshida - Software Engineer & Developer" activePage="blog">
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-eyebrow">Blog</p>
+      <h1 class="section-title">Articles</h1>
+      <p class="section-subtitle">
+        技術記事や日々の学びを発信しています
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8">
+          <!-- Blog List -->
+          <div class="d-flex flex-column gap-4">
+            {blogs.length > 0 ? (
+              blogs.map((blog, index) => (
+                <BlogCard {...blog} index={index} />
+              ))
+            ) : (
+              <div class="text-center py-5">
+                <i class="bi bi-journal-text fs-1" style="color: var(--color-text-muted);"></i>
+                <p class="mt-3" style="color: var(--color-text-muted);">
+                  まだブログ記事が登録されていません。<br />
+                  src/data/blogs.ts にブログを追加してください。
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <div class="sticky-top" style="top: 100px;">
+            <!-- About Widget -->
+            <div class="card-custom mb-4">
+              <div class="card-body-custom">
+                <h5 class="mb-3">
+                  <i class="bi bi-person-circle me-2 text-gradient"></i>About
+                </h5>
+                <p class="card-text-custom mb-3">
+                  大阪大学 工学部 電子情報工学科 B2。
+                  開発が大好きなエンジニア。
+                </p>
+                <a href="/about" class="btn btn-outline-custom btn-sm">
+                  Read More <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="card-custom mb-4">
+              <div class="card-body-custom">
+                <h5 class="mb-3">
+                  <i class="bi bi-tags me-2 text-gradient"></i>Categories
+                </h5>
+                <div class="d-flex flex-wrap gap-2">
+                  {categories.length > 0 ? (
+                    categories.map(category => (
+                      <span class="tech-tag">{category}</span>
+                    ))
+                  ) : (
+                    <span style="color: var(--color-text-muted);">No categories yet</span>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <!-- External Links Widget -->
+            <div class="card-custom">
+              <div class="card-body-custom">
+                <h5 class="mb-3">
+                  <i class="bi bi-link-45deg me-2 text-gradient"></i>External Links
+                </h5>
+                <ul class="list-unstyled mb-0">
+                  <!-- ##TODO: 外部ブログリンクを追加してください -->
+                  <li class="mb-2">
+                    <a href="https://zenn.dev/" target="_blank" rel="noopener" class="d-flex align-items-center gap-2" style="color: var(--color-text-secondary);">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                      <span>Zenn</span>
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="https://qiita.com/" target="_blank" rel="noopener" class="d-flex align-items-center gap-2" style="color: var(--color-text-secondary);">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                      <span>Qiita</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://note.com/" target="_blank" rel="noopener" class="d-flex align-items-center gap-2" style="color: var(--color-text-secondary);">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                      <span>note</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products } from '../data/products';
+---
+
+<BaseLayout title="Products | Kazuya Yoshida" description="Products by Kazuya Yoshida - Software Engineer & Developer" activePage="products">
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-eyebrow">Portfolio</p>
+      <h1 class="section-title">Products</h1>
+      <p class="section-subtitle">
+        これまでに制作したプロダクトの一覧です
+      </p>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="section pt-0">
+    <div class="container">
+      <!-- Filter Buttons -->
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+        <button class="btn btn-outline-custom btn-sm filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-outline-custom btn-sm filter-btn" data-filter="web">Web</button>
+        <button class="btn btn-outline-custom btn-sm filter-btn" data-filter="mobile">Mobile</button>
+        <button class="btn btn-outline-custom btn-sm filter-btn" data-filter="other">Other</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="row g-4" id="products-container">
+        {products.length > 0 ? (
+          products.map((product, index) => (
+            <ProductCard {...product} index={index} />
+          ))
+        ) : (
+          <div class="col-12 text-center py-5">
+            <i class="bi bi-box-seam fs-1" style="color: var(--color-text-muted);"></i>
+            <p class="mt-3" style="color: var(--color-text-muted);">
+              まだプロダクトが登録されていません。<br />
+              src/data/products.ts にプロダクトを追加してください。
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" style="background: var(--color-bg-secondary);">
+    <div class="container text-center">
+      <h3 class="mb-3">一緒にプロジェクトを作りませんか？</h3>
+      <p style="color: var(--color-text-muted);" class="mb-4">
+        新しいアイデアやコラボレーションについてお気軽にご連絡ください
+      </p>
+      <a href="mailto:kyoshidk@gmail.com" class="btn btn-primary-custom">
+        <i class="bi bi-envelope me-2"></i>Contact Me
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Products Filter
+  const filterButtons = document.querySelectorAll('.filter-btn');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      const productItems = document.querySelectorAll('.product-item');
+
+      productItems.forEach(item => {
+        const el = item as HTMLElement;
+        if (filter === 'all' || el.getAttribute('data-category') === filter) {
+          el.style.display = 'block';
+          el.classList.add('visible');
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

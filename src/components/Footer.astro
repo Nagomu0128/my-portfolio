@@ -1,0 +1,25 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  { href: '/', label: 'Overview' },
+  { href: '/about', label: 'About' },
+  { href: '/products', label: 'Products' },
+  { href: '/blog', label: 'Blog' },
+];
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p class="footer-text">
+        &copy; {currentYear} Kazuya Yoshida. All rights reserved.
+      </p>
+      <div class="footer-links">
+        {footerLinks.map((link) => (
+          <a href={link.href} class="footer-link">{link.label}</a>
+        ))}
+      </div>
+    </div>
+  </div>
+</footer>
