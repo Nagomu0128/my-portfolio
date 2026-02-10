@@ -6,32 +6,23 @@ import { products } from '../data/products';
 const recentProducts = products.slice(0, 3);
 ---
 
-<BaseLayout title="Kazuya Yoshida | Portfolio" activePage="overview">
-  <!-- Hero Section -->
-  <section class="hero-section">
+<BaseLayout title="Kazuya Yoshida" activePage="overview">
+  <section style="padding-top: 5rem;">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-5 order-lg-2 mb-4 mb-lg-0">
-          <div class="profile-image-wrapper text-center">
-            <img
-              src="/images/profile.png"
-              alt="Kazuya Yoshida"
-              class="profile-image"
-            />
-          </div>
-        </div>
-        <div class="col-lg-7 order-lg-1">
-          <h1 class="hero-title">吉田 和哉</h1>
-          <p class="hero-subtitle">
+      <!-- Intro -->
+      <div class="row align-items-center mb-5" style="padding: 2rem 0;">
+        <div class="col-lg-8">
+          <h1 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem;">吉田 和哉</h1>
+          <p style="color: var(--color-text-sub); line-height: 1.8; margin-bottom: 1.5rem;">
             大阪大学工学部 電子情報工学科 B2。
             フルスタック開発を中心に、Web・クラウド・インフラまで幅広く挑戦しています。
+            開発が好きで、テック系の記事を読むのが日課です。
           </p>
-          <div class="hero-cta">
+          <div class="d-flex flex-wrap gap-2 mb-3">
             <a href="/about" class="btn btn-primary-custom">About</a>
             <a href="/products" class="btn btn-outline-custom">Products</a>
           </div>
-
-          <div class="social-links">
+          <div class="social-links" style="margin-top: 1rem;">
             <a href="https://github.com/Nagomu0128" target="_blank" rel="noopener" class="social-link" title="GitHub">
               <i class="bi bi-github"></i>
             </a>
@@ -49,118 +40,85 @@ const recentProducts = products.slice(0, 3);
             </a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Overview Section -->
-  <hr class="section-divider" />
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Overview</h2>
-        <p class="section-subtitle">開発が好きなエンジニア。テック系の記事を読むのが日課です。</p>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="card-custom h-100">
-            <div class="card-body-custom">
-              <h4 class="card-title-custom mb-2">Web Development</h4>
-              <p class="card-text-custom">
-                Next.js, React, TypeScriptを中心としたモダンなフロントエンド開発。
-                パフォーマンスとユーザー体験を重視した設計を心がけています。
-              </p>
-              <div class="tech-tags">
-                <span class="tech-tag">Next.js</span>
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">TypeScript</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="card-custom h-100">
-            <div class="card-body-custom">
-              <h4 class="card-title-custom mb-2">Cloud &amp; Infrastructure</h4>
-              <p class="card-text-custom">
-                GCP, Azureなどのクラウドサービスに興味があり、現在学習中。
-                Docker, Azure, Terraformを使ったインフラ構築を勉強しています。
-              </p>
-              <div class="tech-tags">
-                <span class="tech-tag">GCP</span>
-                <span class="tech-tag">Azure</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">Kubernetes</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="card-custom h-100">
-            <div class="card-body-custom">
-              <h4 class="card-title-custom mb-2">Backend &amp; Database</h4>
-              <p class="card-text-custom">
-                Go, Python を使用したAPI開発。
-                PostgreSQL, Firebaseなどのデータベース設計・運用。
-              </p>
-              <div class="tech-tags">
-                <span class="tech-tag">Go</span>
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">PostgreSQL</span>
-              </div>
-            </div>
-          </div>
+        <div class="col-lg-4 text-center mt-4 mt-lg-0">
+          <img
+            src="/images/profile.png"
+            alt="Kazuya Yoshida"
+            class="profile-image"
+          />
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Recent Products -->
-  {recentProducts.length > 0 && (
-    <section class="section" style="background: var(--color-bg-alt);">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Recent Products</h2>
-        </div>
+      <hr class="section-divider" />
 
+      <!-- What I Do -->
+      <div style="padding: 3rem 0;">
+        <h2 style="font-size: 1.3rem; margin-bottom: 2rem;">What I Do</h2>
         <div class="row g-4">
-          {recentProducts.map((product, index) => (
-            <ProductCard {...product} index={index} />
-          ))}
-        </div>
-
-        <div class="text-center mt-4">
-          <a href="/products" class="btn btn-outline-custom">
-            View All
-          </a>
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- Contact Section -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Contact</h2>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-4">
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="bi bi-envelope"></i>
+          <div class="col-md-4">
+            <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem;">Web Development</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.7;">
+              Next.js, React, TypeScriptを中心としたフロントエンド開発。
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">TypeScript</span>
             </div>
-            <h4 class="contact-title">Email</h4>
-            <p class="contact-text">kyoshidk@gmail.com</p>
-            <a href="mailto:kyoshidk@gmail.com" class="btn btn-outline-custom btn-sm mt-3">
-              Send Email
-            </a>
+          </div>
+          <div class="col-md-4">
+            <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem;">Cloud &amp; Infra</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.7;">
+              GCP, Azureなどのクラウドサービスを学習中。Docker, Terraformも触っています。
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">GCP</span>
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">Docker</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem;">Backend</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.7;">
+              Go, PythonでのAPI開発。PostgreSQL, Firebaseなどのデータベース設計。
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Go</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
           </div>
         </div>
+      </div>
+
+      <!-- Recent Products -->
+      {recentProducts.length > 0 && (
+        <>
+          <hr class="section-divider" />
+          <div style="padding: 3rem 0;">
+            <h2 style="font-size: 1.3rem; margin-bottom: 2rem;">Recent Products</h2>
+            <div class="row g-4">
+              {recentProducts.map((product, index) => (
+                <ProductCard {...product} index={index} />
+              ))}
+            </div>
+            <div class="mt-4">
+              <a href="/products" style="font-size: 0.9rem; text-decoration: underline; text-underline-offset: 3px;">
+                View all &rarr;
+              </a>
+            </div>
+          </div>
+        </>
+      )}
+
+      <hr class="section-divider" />
+
+      <!-- Contact -->
+      <div style="padding: 3rem 0;">
+        <h2 style="font-size: 1.3rem; margin-bottom: 1rem;">Contact</h2>
+        <p style="color: var(--color-text-sub); font-size: 0.9rem;">
+          <a href="mailto:kyoshidk@gmail.com" style="text-decoration: underline; text-underline-offset: 3px;">kyoshidk@gmail.com</a>
+        </p>
       </div>
     </div>
   </section>
