@@ -6,12 +6,11 @@ import { blogs, getCategories } from '../data/blogs';
 const categories = getCategories();
 ---
 
-<BaseLayout title="Blog | Kazuya Yoshida" description="Blog by Kazuya Yoshida - Software Engineer & Developer" activePage="blog">
+<BaseLayout title="Blog | Kazuya Yoshida" description="Blog by Kazuya Yoshida" activePage="blog">
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <p class="section-eyebrow">Blog</p>
-      <h1 class="section-title">Articles</h1>
+      <h1 class="section-title">Blog</h1>
       <p class="section-subtitle">
         技術記事や日々の学びを発信しています
       </p>
@@ -24,7 +23,6 @@ const categories = getCategories();
       <div class="row">
         <!-- Main Content -->
         <div class="col-lg-8 mb-5 mb-lg-0">
-          <!-- Blog List -->
           <div class="d-flex flex-column gap-4">
             {blogs.length > 0 ? (
               blogs.map((blog, index) => (
@@ -32,9 +30,8 @@ const categories = getCategories();
               ))
             ) : (
               <div class="text-center py-5">
-                <i class="bi bi-journal-text fs-1" style="color: var(--color-text-muted);"></i>
-                <p class="mt-3" style="color: var(--color-text-muted);">
-                  まだブログ記事が登録されていません。<br />
+                <p style="color: var(--color-text-muted);">
+                  まだブログ記事が登録されていません。
                 </p>
               </div>
             )}
@@ -43,19 +40,17 @@ const categories = getCategories();
 
         <!-- Sidebar -->
         <div class="col-lg-4">
-          <div class="sticky-top" style="top: 100px;">
+          <div class="sticky-top" style="top: 80px;">
             <!-- About Widget -->
             <div class="card-custom mb-4">
               <div class="card-body-custom">
-                <h5 class="mb-3">
-                  <i class="bi bi-person-circle me-2 icon-accent"></i>About
-                </h5>
+                <h5 class="mb-3">About</h5>
                 <p class="card-text-custom mb-3">
                   大阪大学 工学部 電子情報工学科 B2。
-                  開発が大好きなエンジニア。
+                  開発が好きなエンジニア。
                 </p>
                 <a href="/about" class="btn btn-outline-custom btn-sm">
-                  Read More <i class="bi bi-arrow-right ms-1"></i>
+                  Read More
                 </a>
               </div>
             </div>
@@ -63,9 +58,7 @@ const categories = getCategories();
             <!-- Categories Widget -->
             <div class="card-custom mb-4">
               <div class="card-body-custom">
-                <h5 class="mb-3">
-                  <i class="bi bi-tags me-2 icon-accent"></i>Categories
-                </h5>
+                <h5 class="mb-3">Categories</h5>
                 <div class="d-flex flex-wrap gap-2">
                   {categories.length > 0 ? (
                     categories.map(category => (
@@ -81,20 +74,16 @@ const categories = getCategories();
             <!-- External Links Widget -->
             <div class="card-custom">
               <div class="card-body-custom">
-                <h5 class="mb-3">
-                  <i class="bi bi-link-45deg me-2 icon-accent"></i>External Links
-                </h5>
+                <h5 class="mb-3">Links</h5>
                 <ul class="list-unstyled mb-0">
                   <li class="mb-2">
-                    <a href="https://zenn.dev/nagomu" target="_blank" rel="noopener" class="d-flex align-items-center gap-2" style="color: var(--color-text-secondary);">
-                      <i class="bi bi-box-arrow-up-right"></i>
-                      <span>Zenn</span>
+                    <a href="https://zenn.dev/nagomu" target="_blank" rel="noopener" style="color: var(--color-text-sub); text-decoration: underline; text-underline-offset: 3px;">
+                      Zenn
                     </a>
                   </li>
                   <li class="mb-2">
-                    <a href="https://qiita.com/" target="_blank" rel="noopener" class="d-flex align-items-center gap-2" style="color: var(--color-text-secondary);">
-                      <i class="bi bi-box-arrow-up-right"></i>
-                      <span>Qiita</span>
+                    <a href="https://qiita.com/" target="_blank" rel="noopener" style="color: var(--color-text-sub); text-decoration: underline; text-underline-offset: 3px;">
+                      Qiita
                     </a>
                   </li>
                 </ul>

@@ -22,13 +22,10 @@ const {
   date,
   index = 0
 } = Astro.props;
-
-const delayClass = `animate-delay-${(index % 5) + 1}`;
-const placeholderImage = `https://via.placeholder.com/400x250/1a1a25/c9a227?text=${encodeURIComponent(title)}`;
 ---
 
 <div
-  class={`col-md-6 col-lg-4 animate-on-scroll ${delayClass} product-item`}
+  class="col-md-6 col-lg-4 product-item"
   data-category={category.toLowerCase()}
 >
   <div class="card-custom h-100">
@@ -37,7 +34,6 @@ const placeholderImage = `https://via.placeholder.com/400x250/1a1a25/c9a227?text
         src={image}
         alt={title}
         class="card-image"
-        onerror={`this.src='${placeholderImage}'`}
         loading="lazy"
       />
       <div class="card-overlay">
@@ -48,7 +44,7 @@ const placeholderImage = `https://via.placeholder.com/400x250/1a1a25/c9a227?text
             </a>
           )}
           {githubUrl && (
-            <a href={githubUrl} target="_blank" rel="noopener" class="btn btn-outline-custom btn-sm">
+            <a href={githubUrl} target="_blank" rel="noopener" class="btn btn-outline-custom btn-sm" style="color: #fff; border-color: rgba(255,255,255,0.5);">
               GitHub
             </a>
           )}
@@ -66,7 +62,7 @@ const placeholderImage = `https://via.placeholder.com/400x250/1a1a25/c9a227?text
       </div>
       {date && (
         <div class="card-meta">
-          <span><i class="bi bi-calendar3 me-1"></i>{date}</span>
+          <span>{date}</span>
         </div>
       )}
     </div>
