@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionHeader from '../components/SectionHeader.astro';
 import ProductCard from '../components/ProductCard.astro';
 import { products } from '../data/products';
 
@@ -12,39 +11,34 @@ const recentProducts = products.slice(0, 3);
   <section class="hero-section">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
+        <div class="col-lg-5 order-lg-2 mb-4 mb-lg-0">
           <div class="profile-image-wrapper text-center">
             <img
               src="/images/profile.png"
               alt="Kazuya Yoshida"
               class="profile-image"
-              onerror="this.src='https://via.placeholder.com/400x400/1a1a25/c9a227?text=KY'"
             />
           </div>
         </div>
-        <div class="col-lg-6 order-lg-1 hero-content">
-          <p class="hero-eyebrow">Software Engineer</p>
-          <h1 class="hero-title">
-            Hi, I'm <span class="highlight">Kazuya Yoshida</span>
-          </h1>
+        <div class="col-lg-7 order-lg-1">
+          <h1 class="hero-title">吉田 和哉</h1>
           <p class="hero-subtitle">
             大阪大学工学部 電子情報工学科 B2。
             フルスタック開発を中心に、Web・クラウド・インフラまで幅広く挑戦しています。
           </p>
           <div class="hero-cta">
-            <a href="/about" class="btn btn-primary-custom">About Me</a>
-            <a href="/products" class="btn btn-outline-custom">View Products</a>
+            <a href="/about" class="btn btn-primary-custom">About</a>
+            <a href="/products" class="btn btn-outline-custom">Products</a>
           </div>
 
-          <!-- Social Links -->
           <div class="social-links">
-            <a href="https://github.com/Nagomu0128" target="_blank" rel="noopener" class="social-link" title="GitHub (Personal)">
+            <a href="https://github.com/Nagomu0128" target="_blank" rel="noopener" class="social-link" title="GitHub">
               <i class="bi bi-github"></i>
             </a>
-            <a href="https://github.com/gdsc-osaka" target="_blank" rel="noopener" class="social-link" title="GitHub (GDSC Osaka)">
+            <a href="https://github.com/gdsc-osaka" target="_blank" rel="noopener" class="social-link" title="GitHub (GDSC)">
               <i class="bi bi-github"></i>
             </a>
-            <a href="https://twitter.com/devnago0" target="_blank" rel="noopener" class="social-link" title="X (Twitter)">
+            <a href="https://twitter.com/devnago0" target="_blank" rel="noopener" class="social-link" title="X">
               <i class="bi bi-twitter-x"></i>
             </a>
             <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
@@ -59,26 +53,20 @@ const recentProducts = products.slice(0, 3);
     </div>
   </section>
 
-  <!-- Quick Overview Section -->
-  <section class="section" id="overview">
+  <!-- Overview Section -->
+  <hr class="section-divider" />
+  <section class="section">
     <div class="container">
-      <hr class="section-divider mb-5" />
-
-      <SectionHeader
-        eyebrow="What I Do"
-        title="Overview"
-        subtitle="開発が大好きなエンジニア。テック系の記事を読むのが日課です。"
-      />
+      <div class="section-header">
+        <h2 class="section-title">Overview</h2>
+        <p class="section-subtitle">開発が好きなエンジニア。テック系の記事を読むのが日課です。</p>
+      </div>
 
       <div class="row g-4">
-        <!-- Card 1: Web Development -->
-        <div class="col-md-6 col-lg-4 animate-on-scroll animate-delay-1">
+        <div class="col-md-6 col-lg-4">
           <div class="card-custom h-100">
             <div class="card-body-custom">
-              <div class="mb-3">
-                <i class="bi bi-code-slash fs-2 icon-accent"></i>
-              </div>
-              <h4 class="card-title-custom">Web Development</h4>
+              <h4 class="card-title-custom mb-2">Web Development</h4>
               <p class="card-text-custom">
                 Next.js, React, TypeScriptを中心としたモダンなフロントエンド開発。
                 パフォーマンスとユーザー体験を重視した設計を心がけています。
@@ -92,17 +80,10 @@ const recentProducts = products.slice(0, 3);
           </div>
         </div>
 
-        <!-- Card 2: Cloud <span class="amp">&</span> Infrastructure -->
-        <div class="col-md-6 col-lg-4 animate-on-scroll animate-delay-2">
+        <div class="col-md-6 col-lg-4">
           <div class="card-custom h-100">
             <div class="card-body-custom">
-              <div class="mb-3">
-                <i class="bi bi-cloud fs-2 icon-accent"></i>
-              </div>
-              <h4 class="card-title-custom">
-                Cloud <span class="amp">&</span> Infrastructure
-                <span class="badge rounded-pill ms-2" style="background: rgba(74, 144, 164, 0.2); color: var(--color-accent-secondary); font-size: 0.65rem; vertical-align: middle;">Learning</span>
-              </h4>
+              <h4 class="card-title-custom mb-2">Cloud &amp; Infrastructure</h4>
               <p class="card-text-custom">
                 GCP, Azureなどのクラウドサービスに興味があり、現在学習中。
                 Docker, Azure, Terraformを使ったインフラ構築を勉強しています。
@@ -117,14 +98,10 @@ const recentProducts = products.slice(0, 3);
           </div>
         </div>
 
-        <!-- Card 3: Backend -->
-        <div class="col-md-6 col-lg-4 animate-on-scroll animate-delay-3">
+        <div class="col-md-6 col-lg-4">
           <div class="card-custom h-100">
             <div class="card-body-custom">
-              <div class="mb-3">
-                <i class="bi bi-database fs-2 icon-accent"></i>
-              </div>
-              <h4 class="card-title-custom">Backend <span class="amp">&</span> Database</h4>
+              <h4 class="card-title-custom mb-2">Backend &amp; Database</h4>
               <p class="card-text-custom">
                 Go, Python を使用したAPI開発。
                 PostgreSQL, Firebaseなどのデータベース設計・運用。
@@ -141,40 +118,38 @@ const recentProducts = products.slice(0, 3);
     </div>
   </section>
 
-  <!-- Recent Products Preview -->
-  <section class="section" style="background: var(--color-bg-secondary);">
-    <div class="container">
-      <SectionHeader
-        eyebrow="Portfolio"
-        title="Recent Products"
-        subtitle="最近取り組んだプロジェクトの一部をご紹介します。"
-      />
+  <!-- Recent Products -->
+  {recentProducts.length > 0 && (
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Recent Products</h2>
+        </div>
 
-      <div class="row g-4">
-        {recentProducts.map((product, index) => (
-          <ProductCard {...product} index={index} />
-        ))}
-      </div>
+        <div class="row g-4">
+          {recentProducts.map((product, index) => (
+            <ProductCard {...product} index={index} />
+          ))}
+        </div>
 
-      <div class="text-center mt-5">
-        <a href="/products" class="btn btn-outline-custom">
-          View All Products <i class="bi bi-arrow-right ms-2"></i>
-        </a>
+        <div class="text-center mt-4">
+          <a href="/products" class="btn btn-outline-custom">
+            View All
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- Contact Section -->
   <section class="section">
     <div class="container">
-      <SectionHeader
-        eyebrow="Get in Touch"
-        title="Contact"
-        subtitle="お気軽にご連絡ください。"
-      />
+      <div class="section-header">
+        <h2 class="section-title">Contact</h2>
+      </div>
 
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-lg-4 animate-on-scroll">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
           <div class="contact-card">
             <div class="contact-icon">
               <i class="bi bi-envelope"></i>

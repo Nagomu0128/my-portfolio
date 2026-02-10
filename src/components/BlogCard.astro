@@ -19,12 +19,9 @@ const {
   index = 0
 } = Astro.props;
 
-const delayClass = `animate-delay-${(index % 5) + 1}`;
-
 // ZennのURLからOGP画像を取得する関数
 async function getZennOgImage(targetUrl: string): Promise<string> {
   try {
-    // ZennのURLからslugを抽出 (例: https://zenn.dev/user/articles/slug)
     const match = targetUrl.match(/zenn\.dev\/[^/]+\/articles\/([^/?#]+)/);
     if (!match) return '';
 
@@ -37,7 +34,6 @@ async function getZennOgImage(targetUrl: string): Promise<string> {
   }
 }
 
-// imageが空の場合、Zenn URLならAPIからOGP画像を取得
 let resolvedImage = image || '';
 if (!image && url) {
   if (url.includes('zenn.dev')) {
@@ -46,19 +42,20 @@ if (!image && url) {
 }
 ---
 
-<article class={`blog-card animate-on-scroll ${delayClass}`}>
-  <img
-    src={resolvedImage}
-    alt={title}
-    class="blog-card-image"
-    onerror="this.src='https://via.placeholder.com/200x140/1a1a25/c9a227?text=Blog'"
-    loading="lazy"
-  />
+<article class="blog-card">
+  {resolvedImage && (
+    <img
+      src={resolvedImage}
+      alt={title}
+      class="blog-card-image"
+      loading="lazy"
+    />
+  )}
   <div class="blog-card-content">
     <time class="blog-card-date">
-      <i class="bi bi-calendar3 me-1"></i>{date}
+      {date}
       {category && (
-        <span class="ms-3"><i class="bi bi-tag me-1"></i>{category}</span>
+        <span class="ms-2">{category}</span>
       )}
     </time>
     <h3 class="blog-card-title">{title}</h3>

@@ -1,14 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionHeader from '../components/SectionHeader.astro';
 ---
 
 <BaseLayout title="About | Kazuya Yoshida" description="About Kazuya Yoshida - Software Engineer & Developer" activePage="about">
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <p class="section-eyebrow">About Me</p>
-      <h1 class="section-title">Who I Am</h1>
+      <h1 class="section-title">About</h1>
     </div>
   </section>
 
@@ -16,7 +14,7 @@ import SectionHeader from '../components/SectionHeader.astro';
   <section class="section pt-0">
     <div class="container">
       <div class="row align-items-center g-5">
-        <div class="col-lg-5 animate-on-scroll">
+        <div class="col-lg-4">
           <div class="profile-image-wrapper">
             <img
               src="/images/profile.png"
@@ -25,65 +23,44 @@ import SectionHeader from '../components/SectionHeader.astro';
             />
           </div>
         </div>
-        <div class="col-lg-7 animate-on-scroll animate-delay-1">
-          <h2 class="mb-4">吉田 和哉 <span class="text-gradient d-block d-md-inline">Yoshida Kazuya</span></h2>
+        <div class="col-lg-8">
+          <h2 class="mb-3">吉田 和哉</h2>
           <div class="mb-4">
-            <p class="mb-3" style="color: var(--color-text-secondary); font-size: 1.1rem;">
+            <p class="mb-3">
               大阪大学工学部 電子情報工学科 B2の学生です。
               電子回路とコンピュータサイエンスについて日々勉強しています。
             </p>
-            <p class="mb-3" style="color: var(--color-text-secondary);">
+            <p class="mb-3">
               開発経験はまだ浅いですが、開発が大好きで、テック系の記事を読むのが日課です。
               新しい技術に触れることが好きで、フロントエンドからインフラまで幅広く挑戦しています。
             </p>
-            <p style="color: var(--color-text-secondary);">
+            <p>
               趣味は一人旅で、B2の春に九州一周一人旅をしました。
               どこかおすすめの旅先を知っていたらぜひ教えてください！
             </p>
           </div>
 
-          <!-- Quick Info -->
           <div class="row g-3 mb-4">
             <div class="col-sm-6">
-              <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-geo-alt icon-accent fs-4"></i>
-                <div>
-                  <small style="color: var(--color-text-muted);">Location</small>
-                  <p class="mb-0">Osaka, Japan</p>
-                </div>
-              </div>
+              <small style="color: var(--color-text-muted);">Location</small>
+              <p class="mb-0" style="font-size: 0.95rem;">Osaka, Japan</p>
             </div>
             <div class="col-sm-6">
-              <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-mortarboard icon-accent fs-4"></i>
-                <div>
-                  <small style="color: var(--color-text-muted);">University</small>
-                  <p class="mb-0">Osaka University</p>
-                </div>
-              </div>
+              <small style="color: var(--color-text-muted);">University</small>
+              <p class="mb-0" style="font-size: 0.95rem;">Osaka University</p>
             </div>
             <div class="col-sm-6">
-              <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-calendar3 icon-accent fs-4"></i>
-                <div>
-                  <small style="color: var(--color-text-muted);">Birthday</small>
-                  <p class="mb-0">2006/01/28</p>
-                </div>
-              </div>
+              <small style="color: var(--color-text-muted);">Birthday</small>
+              <p class="mb-0" style="font-size: 0.95rem;">2006/01/28</p>
             </div>
             <div class="col-sm-6">
-              <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-envelope icon-accent fs-4"></i>
-                <div>
-                  <small style="color: var(--color-text-muted);">Email</small>
-                  <p class="mb-0">kyoshidk@gmail.com</p>
-                </div>
-              </div>
+              <small style="color: var(--color-text-muted);">Email</small>
+              <p class="mb-0" style="font-size: 0.95rem;">kyoshidk@gmail.com</p>
             </div>
           </div>
 
           <a href="mailto:kyoshidk@gmail.com" class="btn btn-primary-custom">
-            <i class="bi bi-envelope me-2"></i>Contact Me
+            Contact Me
           </a>
         </div>
       </div>
@@ -95,12 +72,14 @@ import SectionHeader from '../components/SectionHeader.astro';
   <!-- Timeline Section -->
   <section class="section">
     <div class="container">
-      <SectionHeader eyebrow="History" title="My Journey" />
+      <div class="section-header">
+        <h2 class="section-title">Experience</h2>
+      </div>
 
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="timeline">
-            <div class="timeline-item animate-on-scroll">
+            <div class="timeline-item">
               <p class="timeline-date">2024年4月~</p>
               <h4 class="timeline-title">大阪大学 工学部</h4>
               <p class="timeline-description">
@@ -109,7 +88,7 @@ import SectionHeader from '../components/SectionHeader.astro';
               </p>
             </div>
 
-            <div class="timeline-item animate-on-scroll animate-delay-1">
+            <div class="timeline-item">
               <p class="timeline-date">2025年5月~</p>
               <h4 class="timeline-title">Google Developer Groups on Campus Osaka</h4>
               <p class="timeline-description">
@@ -118,7 +97,7 @@ import SectionHeader from '../components/SectionHeader.astro';
               </p>
             </div>
 
-            <div class="timeline-item animate-on-scroll animate-delay-2">
+            <div class="timeline-item">
               <p class="timeline-date">2025年10月~</p>
               <h4 class="timeline-title">Kiei 長期インターンシップ</h4>
               <p class="timeline-description">
@@ -136,18 +115,14 @@ import SectionHeader from '../components/SectionHeader.astro';
   <!-- Skills Section -->
   <section class="section">
     <div class="container">
-      <SectionHeader
-        eyebrow="Skills"
-        title="Technologies"
-      />
+      <div class="section-header">
+        <h2 class="section-title">Skills</h2>
+      </div>
 
       <div class="row justify-content-center">
         <div class="col-lg-10">
-          <!-- Languages & Frameworks -->
-          <div class="mb-5 animate-on-scroll">
-            <h5 class="skill-category-title text-center mb-4">
-              Languages & Frameworks
-            </h5>
+          <div class="mb-5">
+            <h5 class="skill-category-title text-center mb-4">Languages &amp; Frameworks</h5>
             <div class="d-flex flex-wrap justify-content-center gap-3">
               <div class="skill-item">
                 <i class="devicon-typescript-plain colored"></i>
@@ -176,11 +151,8 @@ import SectionHeader from '../components/SectionHeader.astro';
             </div>
           </div>
 
-          <!-- Infrastructure -->
-          <div class="animate-on-scroll animate-delay-1">
-            <h5 class="skill-category-title text-center mb-4">
-              Infrastructure
-            </h5>
+          <div>
+            <h5 class="skill-category-title text-center mb-4">Infrastructure</h5>
             <div class="d-flex flex-wrap justify-content-center gap-3">
               <div class="skill-item">
                 <i class="devicon-docker-plain colored"></i>
@@ -214,14 +186,15 @@ import SectionHeader from '../components/SectionHeader.astro';
   <!-- Interests Section -->
   <section class="section">
     <div class="container">
-      <SectionHeader eyebrow="Interests" title="Beyond Coding" />
+      <div class="section-header">
+        <h2 class="section-title">Interests</h2>
+      </div>
 
       <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-lg-4 animate-on-scroll">
+        <div class="col-md-6 col-lg-4">
           <div class="card-custom text-center">
-            <div class="card-body-custom py-5">
-              <i class="bi bi-airplane fs-1 icon-accent mb-3"></i>
-              <h4 class="card-title-custom">Solo Travel</h4>
+            <div class="card-body-custom py-4">
+              <h4 class="card-title-custom">一人旅</h4>
               <p class="card-text-custom">
                 一人旅が好き。B2の春に九州一周の旅をしました。
                 新しい場所を探索するのが楽しい。
@@ -230,11 +203,10 @@ import SectionHeader from '../components/SectionHeader.astro';
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 animate-on-scroll animate-delay-1">
+        <div class="col-md-6 col-lg-4">
           <div class="card-custom text-center">
-            <div class="card-body-custom py-5">
-              <i class="bi bi-cup fs-1 icon-accent mb-3"></i>
-              <h4 class="card-title-custom">Japanese Sake</h4>
+            <div class="card-body-custom py-4">
+              <h4 class="card-title-custom">日本酒</h4>
               <p class="card-text-custom">
                 お酒が大好き、特に日本酒。
                 各地の地酒を味わうのが趣味です。
@@ -243,11 +215,10 @@ import SectionHeader from '../components/SectionHeader.astro';
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 animate-on-scroll animate-delay-2">
+        <div class="col-md-6 col-lg-4">
           <div class="card-custom text-center">
-            <div class="card-body-custom py-5">
-              <i class="bi bi-journal-text fs-1 icon-accent mb-3"></i>
-              <h4 class="card-title-custom">Tech Articles</h4>
+            <div class="card-body-custom py-4">
+              <h4 class="card-title-custom">技術記事</h4>
               <p class="card-text-custom">
                 テック系の記事を読むのが日課。
                 最新技術のトレンドを常にキャッチアップ。
