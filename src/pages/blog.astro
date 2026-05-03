@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogCard from '../components/BlogCard.astro';
-import { blogs, getCategories } from '../data/blogs';
+import { getBlogs, getCategories } from '../data/blogs';
 
-const categories = getCategories();
+const blogs = await getBlogs();
+const categories = getCategories(blogs);
 ---
 
 <BaseLayout title="Blog | Kazuya Yoshida" description="Blog by Kazuya Yoshida" activePage="blog">
